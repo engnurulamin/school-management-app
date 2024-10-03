@@ -19,22 +19,22 @@ const data = [
   },
   {
     name: "Feb",
-    income: 3000,
-    expense: 1398,
+    income: 5000,
+    expense: 2398,
   },
   {
     name: "Mar",
-    income: 2000,
+    income: 6000,
     expense: 9800,
   },
   {
     name: "Apr",
-    income: 2780,
-    expense: 3908,
+    income: 7080,
+    expense: 4908,
   },
   {
     name: "May",
-    income: 1890,
+    income: 4890,
     expense: 4800,
   },
   {
@@ -45,32 +45,32 @@ const data = [
   {
     name: "Jul",
     income: 3490,
-    expense: 4300,
+    expense: 7300,
   },
   {
     name: "Aug",
-    income: 3490,
+    income: 5490,
     expense: 4300,
   },
   {
     name: "Sep",
-    income: 3490,
+    income: 7490,
     expense: 4300,
   },
   {
     name: "Act",
-    income: 3490,
-    expense: 4300,
+    income: 1490,
+    expense: 6300,
   },
   {
     name: "Nov",
-    income: 3490,
-    expense: 4300,
+    income: 8490,
+    expense: 2300,
   },
   {
     name: "Dec",
-    income: 3490,
-    expense: 4300,
+    income: 7490,
+    expense: 6300,
   },
 ];
 
