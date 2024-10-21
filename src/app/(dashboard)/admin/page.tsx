@@ -1,5 +1,6 @@
 import AttendenceChart from "@/components/AttendenceChart";
 import CountChart from "@/components/CountChart";
+import EventCalender from "@/components/EventCalender";
 import FinanceChart from "@/components/FinanceChart";
 import UserCard from "@/components/UserCard";
 
@@ -31,7 +32,9 @@ const AdminPage = () => {
         </div>
       </div>
       {/* Right */}
-      <div className="w-full lg:w-1/3">RRRRR</div>
+      <div className="w-full lg:w-1/3 flex flex-col gap-8">
+        <EventCalender />
+      </div>
     </div>
   );
 };
