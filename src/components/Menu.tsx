@@ -126,16 +126,18 @@ const Menu = () => {
             {i.title}
           </span>
           {i.items.map((item) => {
-            return (
-              <Link
-                href={item.href}
-                key={item.label}
-                className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-SkyLight"
-              >
-                <Image src={item.icon} alt="" width={20} height={20} />
-                <span className="hidden lg:block">{item.label}</span>
-              </Link>
-            );
+            if (item.visible.includes(role)) {
+              return (
+                <Link
+                  href={item.href}
+                  key={item.label}
+                  className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-SkyLight"
+                >
+                  <Image src={item.icon} alt="" width={20} height={20} />
+                  <span className="hidden lg:block">{item.label}</span>
+                </Link>
+              );
+            }
           })}
         </div>
       ))}
