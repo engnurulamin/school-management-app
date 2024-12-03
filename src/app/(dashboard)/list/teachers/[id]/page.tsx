@@ -8,7 +8,7 @@ const SingleTeacherPage = () => {
         {/* Top */}
         <div className="flex flex-col lg:flex-row gap-4">
           {/* User info card */}
-          <div className="bg-Sky px-6 py-4 rounded-md flex-1 flex gap-4">
+          <div className="bg-Sky px-8 py-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
               <Image src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Teacher" height={144} width={144} className="w-36 h-36 rounded-full object-cover"/>
             </div>
@@ -30,7 +30,7 @@ const SingleTeacherPage = () => {
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/phone.png" alt="Phone" width={14} height={14} />
-                  <span className="whitespace-nowrap">01712 568741</span>
+                  <span className="whitespace-nowrap">+8801712568741</span>
                 </div>
               </div>
             </div>
