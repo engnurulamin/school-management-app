@@ -1,8 +1,8 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const SingleTeacherPage = () => {
   return (
-    <div className='flex p4 flex-1 flex-col gap-4 xl:flex-row'>
+    <div className="flex p4 flex-1 flex-col gap-4 xl:flex-row">
       {/* Left */}
       <div className="w-full xl:w-2/3">
         {/* Top */}
@@ -10,11 +10,19 @@ const SingleTeacherPage = () => {
           {/* User info card */}
           <div className="bg-Sky px-8 py-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
-              <Image src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Teacher" height={144} width={144} className="w-36 h-36 rounded-full object-cover"/>
+              <Image
+                src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Teacher"
+                height={144}
+                width={144}
+                className="w-36 h-36 rounded-full object-cover"
+              />
             </div>
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <h1 className="text-xl font-semibold">Nurul Amin</h1>
-              <p className="text-sm text-gray-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+              <p className="text-sm text-gray-500">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              </p>
               <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/blood.png" alt="Blood" width={14} height={14} />
@@ -37,13 +45,58 @@ const SingleTeacherPage = () => {
           </div>
           {/* Samll Card */}
           <div className="flex-1 flex gap-4 justify-between flex-wrap">
-            <div className="">
-              <Image src="/singleAttendance.png" alt="Attendance" height={24} width={24} className="w-6 h-6"/>
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src="/singleAttendance.png"
+                alt="Attendance"
+                height={24}
+                width={24}
+                className="w-6 h-6"
+              />
+              <div className="">
+                <h1 className="text-xl font-semibold">90%</h1>
+                <span className="text-sm text-gray-400">Attendance</span>
+              </div>
             </div>
-            <div className="">
-              <h1>90%</h1>
-              <span>Attendance</span>
-           </div>
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src="/singleBranch.png"
+                alt="Attendance"
+                height={24}
+                width={24}
+                className="w-6 h-6"
+              />
+              <div className="">
+                <h1 className="text-xl font-semibold">2</h1>
+                <span className="text-sm text-gray-400">Branches</span>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src="/singleLesson.png"
+                alt="Attendance"
+                height={24}
+                width={24}
+                className="w-6 h-6"
+              />
+              <div className="">
+                <h1 className="text-xl font-semibold">5</h1>
+                <span className="text-sm text-gray-400">Lessons</span>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src="/singleClass.png"
+                alt="Attendance"
+                height={24}
+                width={24}
+                className="w-6 h-6"
+              />
+              <div className="">
+                <h1 className="text-xl font-semibold">5</h1>
+                <span className="text-sm text-gray-400">Lessons</span>
+              </div>
+            </div>
           </div>
         </div>
         {/*  */}
@@ -52,7 +105,7 @@ const SingleTeacherPage = () => {
       {/*  */}
       <div className="w-full xl:w-1/3">right</div>
     </div>
-  )
-}
+  );
+};
 
-export default SingleTeacherPage
+export default SingleTeacherPage;
