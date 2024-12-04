@@ -1,8 +1,11 @@
+import Announcements from "@/components/Announcements";
+import BigCalender from "@/components/BigCalender";
 import Image from "next/image";
+import Link from "next/link";
 
 const SingleTeacherPage = () => {
   return (
-    <div className="flex p4 flex-1 flex-col gap-4 xl:flex-row">
+    <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
       {/* Left */}
       <div className="w-full xl:w-2/3">
         {/* Top */}
@@ -94,16 +97,41 @@ const SingleTeacherPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">5</h1>
-                <span className="text-sm text-gray-400">Lessons</span>
+                <span className="text-sm text-gray-400">Classes</span>
               </div>
             </div>
           </div>
         </div>
-        {/*  */}
-        <div className="">Schedule</div>
+        {/* Bottom */}
+        <div className="mt-4 bg-white p-4 rounded-md h-[800px]">
+          <h1>Teacher&apos;s Schedules</h1>
+          <BigCalender />
+        </div>
       </div>
       {/*  */}
-      <div className="w-full xl:w-1/3">right</div>
+      <div className="w-full xl:w-1/3 flex flex-col gap-4">
+        <div className="bg-white p-4 rounded-md">
+          <h1 className="text-xl font-semibold">Shortcuts</h1>
+          <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
+            <Link className="p-3 rounded-md bg-Sky" href="/">
+              Teacher&apos;s Classes
+            </Link>
+            <Link className="p-3 rounded-md bg-PurpleLight" href="/">
+              Teacher&apos;s Students
+            </Link>
+            <Link className="p-3 rounded-md bg-YellowLight" href="/">
+              Teacher&apos;s Lessons
+            </Link>
+            <Link className="p-3 rounded-md bg-pink-50" href="/">
+              Teacher&apos;s Exams
+            </Link>
+            <Link className="p-3 rounded-md bg-SkyLight" href="/">
+              Teacher&apos;s Assignments
+            </Link>
+          </div>
+        </div>
+        <Announcements />
+      </div>
     </div>
   );
 };
