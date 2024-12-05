@@ -1,7 +1,8 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import {  assignmentsData, lessonsData, role } from "@/lib/data";
+import { assignmentsData, lessonsData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -50,16 +51,18 @@ const AssignmentListPage = () => {
       <td className="hidden md:table-cell">{item.dueDate}</td>
       <td>
         <div className="flex items-center gap-2">
-          <Link href={`/list/assignments/${item.id}`}>
+          {/* <Link href={`/list/assignments/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-Sky">
               <Image src="/view.png" alt="View" width={16} height={16} />
             </button>
-          </Link>
-          {role === "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-Purple">
-              <Image src="/delete.png" alt="Delete" width={16} height={16} />
-            </button>         
-          )}
+          </Link> */}
+          {role === "admin" ||
+            (role === "teacher" && (
+              <>
+                <FormModal table="assignment" type="update" data={item} />
+                <FormModal table="assignment" type="delete" id={item.id} />
+              </>
+            ))}
         </div>
       </td>
     </tr>
@@ -69,7 +72,9 @@ const AssignmentListPage = () => {
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* TOP */}
       <div className="flex items-center justify-between">
-        <h1 className="hidden md:block text-lg font-semibold">All Assignments</h1>
+        <h1 className="hidden md:block text-lg font-semibold">
+          All Assignments
+        </h1>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
@@ -80,10 +85,11 @@ const AssignmentListPage = () => {
               <Image src="/sort.png" alt="Sort" width={14} height={14} />
             </button>
             {role === "admin" && (
-							<button className="w-8 h-8 flex items-center justify-center rounded-full bg-Yellow">
-								<Image src="/plus.png" alt="Add" width={14} height={14} />
-            	</button> 
-						)}
+              <FormModal table="assignment" type="create" />
+              // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-Yellow">
+              //   <Image src="/plus.png" alt="Add" width={14} height={14} />
+              // </button>
+            )}
           </div>
         </div>
       </div>
