@@ -87,7 +87,7 @@ const TeacherListPage = () => {
           {role === "admin" && (
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-Purple">
               <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>         
+            </button>
           )}
         </div>
       </td>
@@ -107,12 +107,12 @@ const TeacherListPage = () => {
             </button>
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-Yellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
-            </button>  
+            </button>
             {role === "admin" && (
-							<button className="w-8 h-8 flex items-center justify-center rounded-full bg-Yellow">
-								<Image src="/plus.png" alt="" width={14} height={14} />
-            	</button> 
-						)}
+              <button className="w-8 h-8 flex items-center justify-center rounded-full bg-Yellow">
+                <Image src="/plus.png" alt="" width={14} height={14} />
+              </button>
+            )}
           </div>
         </div>
       </div>
