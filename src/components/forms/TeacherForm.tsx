@@ -57,7 +57,7 @@ const TeacherForm = ({
           name="username"
           defaultValue={data?.username}
           error={errors?.username}
-          inputProps={{ type: "text", placeholder: "Username" }}
+          inputProps={{ type: "text" }}
         />
         <InputField
           label="Eamil"
@@ -65,7 +65,7 @@ const TeacherForm = ({
           name="email"
           defaultValue={data?.email}
           error={errors?.email}
-          inputProps={{ type: "email", placeholder: "Email" }}
+          inputProps={{ type: "email" }}
         />
         <InputField
           label="Password"
@@ -73,7 +73,7 @@ const TeacherForm = ({
           name="password"
           defaultValue={data?.password}
           error={errors?.password}
-          inputProps={{ type: "password", placeholder: "Password" }}
+          inputProps={{ type: "password" }}
         />
       </div>
       <span className="text-sm text-gray-400 font-medium">
@@ -86,7 +86,7 @@ const TeacherForm = ({
           name="firstName"
           defaultValue={data?.firstName}
           error={errors?.firstName}
-          inputProps={{ type: "text", placeholder: "First Name" }}
+          inputProps={{ type: "text" }}
         />{" "}
         <InputField
           label="Last Name"
@@ -94,7 +94,7 @@ const TeacherForm = ({
           name="lastName"
           defaultValue={data?.lastName}
           error={errors?.lastName}
-          inputProps={{ type: "text", placeholder: "Last Name" }}
+          inputProps={{ type: "text" }}
         />{" "}
         <InputField
           label="Phone"
@@ -102,7 +102,7 @@ const TeacherForm = ({
           name="phone"
           defaultValue={data?.phone}
           error={errors?.phone}
-          inputProps={{ type: "text", placeholder: "Phone" }}
+          inputProps={{ type: "text" }}
         />{" "}
         <InputField
           label="Address"
@@ -110,7 +110,7 @@ const TeacherForm = ({
           name="address"
           defaultValue={data?.address}
           error={errors?.address}
-          inputProps={{ type: "text", placeholder: "Address" }}
+          inputProps={{ type: "text" }}
         />
         <InputField
           label="Blood Group"
@@ -118,47 +118,47 @@ const TeacherForm = ({
           name="bloodType"
           defaultValue={data?.bloodType}
           error={errors?.bloodType}
-          inputProps={{ type: "text", placeholder: "Blood Group" }}
+          inputProps={{ type: "text" }}
         />
         <InputField
-          label="Birth Day"
+          label="Birthday"
           register={register}
           name="birthday"
           defaultValue={data?.birthday}
           error={errors?.birthday}
-          inputProps={{ type: "date", placeholder: "Birth Day" }}
+          inputProps={{ type: "date" }}
         />
-      </div>
-      <div className="flex flex-col gap-2 w-full md:w-1/4">
-        <label className="text-xs text-gray-500">Sex</label>
-        <select
-          className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
-          {...register("sex")}
-          defaultValue={data?.sex}
-        >
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        {errors.sex?.message && (
-          <p className="text-xs text-red-400">
-            {errors.sex.message.toString()}
-          </p>
-        )}
-      </div>
-      <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
-        <label
-          className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
-          htmlFor="img"
-        >
-          <Image src="/upload.png" alt="" width={28} height={28} />
-          <span>Upload a photo</span>
-        </label>
-        <input type="file" id="img" {...register("img")} className="hidden" />
-        {errors.img?.message && (
-          <p className="text-xs text-red-400">
-            {errors.img.message.toString()}
-          </p>
-        )}
+        <div className="flex flex-col gap-2 w-full md:w-1/4">
+          <label className="text-xs text-gray-500">Sex</label>
+          <select
+            className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
+            {...register("sex")}
+            defaultValue={data?.sex}
+          >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          {errors.sex?.message && (
+            <p className="text-xs text-red-400">
+              {errors.sex.message.toString()}
+            </p>
+          )}
+        </div>
+        <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
+          <label
+            className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
+            htmlFor="img"
+          >
+            <Image src="/upload.png" alt="" width={28} height={28} />
+            <span>Upload a photo</span>
+          </label>
+          <input type="file" id="img" {...register("img")} className="hidden" />
+          {errors.img?.message && (
+            <p className="text-xs text-red-400">
+              {errors.img.message.toString()}
+            </p>
+          )}
+        </div>
       </div>
       <button className="bg-blue-400 text-white py-2 rounded-md">
         {type === "create" ? "Create" : "Update"}
