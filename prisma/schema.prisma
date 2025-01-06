@@ -90,7 +90,7 @@ model Lesson {
   subject   Subject  @relation(fields: [subjectId], references: [id])
   classId   Int
   class     Class    @relation(fields: [classId], references: [id])
-  teacherId Int
+  teacherId String
   Teacher   Teacher  @relation(fields: [teacherId], references: [id])
 }
 
