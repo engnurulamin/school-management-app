@@ -3,6 +3,7 @@ import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
 import { role, teachersData } from "@/lib/data";
+import prisma from "@/lib/prisma";
 import { Class, Subject, Teacher } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -63,8 +64,12 @@ const renderRow = (item: TeacherList) => (
       </div>
     </td>
     <td className="hidden md:table-cell">{item.username}</td>
-    <td className="hidden md:table-cell">{item.subjects.join(",")}</td>
-    <td className="hidden md:table-cell">{item.classes.join(",")}</td>
+    <td className="hidden md:table-cell">
+      {item.subjects.map((subject) => subject.name).join(",")}
+    </td>
+    <td className="hidden md:table-cell">
+      {item.classes.map((c) => c.name).join(",")}
+    </td>
     <td className="hidden md:table-cell">{item.phone}</td>
     <td className="hidden md:table-cell">{item.address}</td>
     <td>
@@ -81,7 +86,14 @@ const renderRow = (item: TeacherList) => (
     </td>
   </tr>
 );
-const TeacherListPage = () => {
+const TeacherListPage = async () => {
+  const data = await prisma.teacher.findMany({
+    include: {
+      subjects: true,
+      classes: true,
+    },
+  });
+  console.log(data);
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* TOP */}
@@ -106,7 +118,7 @@ const TeacherListPage = () => {
         </div>
       </div>
       {/* LIST */}
-      <Table columns={columns} renderRow={renderRow} data={teachersData} />
+      <Table columns={columns} renderRow={renderRow} data={data} />
       {/* PAGINATION */}
       <Pagination />
     </div>
