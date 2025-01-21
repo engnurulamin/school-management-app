@@ -86,14 +86,21 @@ const renderRow = (item: TeacherList) => (
     </td>
   </tr>
 );
-const TeacherListPage = async () => {
+const TeacherListPage = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
+  const { page, ...queryParams } = searchParams;
+  const p = page ? parseInt(page) : 1;
   const data = await prisma.teacher.findMany({
     include: {
       subjects: true,
       classes: true,
     },
+    take: 10,
+    skip: 10 * (p - 1),
   });
-  console.log(data);
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* TOP */}
