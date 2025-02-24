@@ -70,6 +70,8 @@ const SubjectsListPage = async ({
               mode: "insensitive",
             };
             break;
+          default:
+            break;
         }
       }
     }

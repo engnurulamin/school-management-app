@@ -84,6 +84,8 @@ const ParentsListPage = async ({
               mode: "insensitive",
             };
             break;
+          default:
+            break;
         }
       }
     }
