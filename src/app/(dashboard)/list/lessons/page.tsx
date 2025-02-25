@@ -74,9 +74,6 @@ const LessonListPage = async ({
           case "teacherId":
             query.teacherId = value;
             break;
-          case "teacherId":
-            query.teacherId = value;
-            break;
           case "search":
             query.OR = [
               { subject: { name: { contains: value, mode: "insensitive" } } },
